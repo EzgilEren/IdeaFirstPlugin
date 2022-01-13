@@ -1,12 +1,19 @@
 <idea-plugin>
     <id>org.ezgifistikcioglu.myFirstPlugin</id>
-    <name>MyIdeaDemo</name>
+    <name>HuaweiForumPluginForIntelliJ</name>
     <version>1.0-SNAPSHOT</version>
     <vendor email="support@fistikciogluezgi.com" url="http://www.fistikciogluezgi.com">fistikciogluezgi</vendor>
 
     <description><![CDATA[
-    My demo idea plugin for actions, messages and dialogs.
+    Plugin to help search Huawei from inside IntelliJ
     ]]></description>
+
+    <change-notes><![CDATA[
+      <ul>
+        <li>1.0-SNAPSHOT - Initial release</li>
+      </ul>
+    ]]>
+    </change-notes>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products
@@ -17,11 +24,32 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
-        <group id="MyIdeaDemo.HelloAction" text="MyIdeaDemo" description="About my idea first plugin">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action class="com.fistikciogluezgi.myideademo.MyNotificationAction" id="MyIdeaDemo.Actions.MyNotificationAction" text="Say Hello"/>
-        </group>
+        <!-- Add Ask question action to Tools Menu -->
+        <action id="Huawei.AskQuestion.ToolsMenu"
+                class="com.fistikciogluezgi.Huaweiplugin.AskQuestionAction"
+                text="Ask Question on Huawei"
+                icon="ic_launcher.png"
+                description="Ask a Question on Huawei">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <!-- Add action to search Huawei from file editor -->
+        <action id="Huawei.Search.Editor"
+                class="com.fistikciogluezgi.Huaweiplugin.SearchQuestionAction"
+                text="Search on Huawei"
+                icon="ic_launcher.png"
+                description="Search on Huawei">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- Add action to search Huawei from console editor -->
+        <action id="Huawei.Search.Console"
+                class="com.fistikciogluezgi.Huaweiplugin.SearchQuestionAction"
+                text="Search on Huawei"
+                icon="ic_launcher.png"
+                description="Search on Huawei">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
+        </action>
     </actions>
     <depends>org.jetbrains.idea.maven</depends>
 </idea-plugin>
