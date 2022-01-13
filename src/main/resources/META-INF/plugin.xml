@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>org.ezgifistikcioglu.myFirstPlugin</id>
+    <name>MyIdeaDemo</name>
+    <version>1.0-SNAPSHOT</version>
+    <vendor email="support@fistikciogluezgi.com" url="http://www.fistikciogluezgi.com">fistikciogluezgi</vendor>
+
+    <description><![CDATA[
+    My demo idea plugin for actions, messages and dialogs.
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products
+    <depends>com.intellij.modules.platform</depends>-->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="MyIdeaDemo.HelloAction" text="MyIdeaDemo" description="About my idea first plugin">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="com.fistikciogluezgi.myideademo.MyNotificationAction" id="MyIdeaDemo.Actions.MyNotificationAction" text="Say Hello"/>
+        </group>
+    </actions>
+    <depends>org.jetbrains.idea.maven</depends>
+</idea-plugin>
