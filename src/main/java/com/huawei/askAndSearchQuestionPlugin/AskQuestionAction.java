@@ -1,4 +1,4 @@
-package com.fistikciogluezgi.Huaweiplugin;
+package com.huawei.askAndSearchQuestionPlugin;
 
 import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.AnAction;

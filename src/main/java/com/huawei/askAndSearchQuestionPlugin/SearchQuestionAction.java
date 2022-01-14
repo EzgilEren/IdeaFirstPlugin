@@ -1,4 +1,4 @@
-package com.fistikciogluezgi.Huaweiplugin;
+package com.huawei.askAndSearchQuestionPlugin;
 
 import com.intellij.ide.BrowserUtil;
 import com.intellij.lang.Language;
@@ -24,7 +24,6 @@ public class SearchQuestionAction extends AnAction {
     public final void actionPerformed(AnActionEvent event) {
         Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
         CaretModel caretModel = editor.getCaretModel();
-        String selectedText = caretModel.getCurrentCaret().getSelectedText();
 
         // For searches from the editor, we should also get file type information
         // to help add scope to the search using the Huawei search syntax.
@@ -43,15 +42,6 @@ public class SearchQuestionAction extends AnAction {
             String query = Objects.requireNonNull(caretModel.getCurrentCaret().getSelectedText()).replace(' ', '+') + languageTag;
             BrowserUtil.browse("https://developer.huawei.com/consumer/en/doc/search?type=all&val=" + query);
         }
-
-        // Using of Gradle -> https://plugins.jetbrains.com/docs/intellij/getting-started.html?from=jetbrains.org#using-gradle
-        Optional<PsiFile> psiFile = Optional.ofNullable(event.getData(CommonDataKeys.PSI_FILE));
-        String typeTag = psiFile
-                .map(PsiFile::getFileElementType)
-                .map(lang -> "all")
-                .orElse("doc");
-
-        BrowserUtil.browse("https://developer.huawei.com/consumer/en/doc/search?type=" + typeTag + "&val=" + selectedText);
     }
 
     /**
