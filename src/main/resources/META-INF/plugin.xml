@@ -16,7 +16,7 @@
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
-    <depends>org.jetbrains.idea.maven</depends>
+    <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -27,7 +27,7 @@
         <action id="Huawei.AskQuestion.ToolsMenu"
                 class="com.huawei.askAndSearchQuestionPlugin.AskQuestionAction"
                 text="Ask Question on Huawei"
-                icon="ic_launcher.png"
+                icon="/icons/ic_launcher.png"
                 description="Ask a Question on Huawei">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
@@ -36,7 +36,7 @@
         <action id="Huawei.Search.Editor"
                 class="com.huawei.askAndSearchQuestionPlugin.SearchQuestionActionWithGradle"
                 text="Search on Huawei"
-                icon="ic_launcher.png"
+                icon="/icons/ic_launcher.png"
                 description="Search on Huawei">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
@@ -45,7 +45,7 @@
         <action id="Huawei.Search.Console"
                 class="com.huawei.askAndSearchQuestionPlugin.SearchQuestionAction"
                 text="Search on Huawei"
-                icon="ic_launcher.png"
+                icon="/icons/ic_launcher.png"
                 description="Search on Huawei">
             <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
         </action>

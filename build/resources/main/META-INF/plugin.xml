@@ -1,0 +1,30 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <idea-version since-build="202.6397" until-build="202.*" />
+  <id>com.huawei.askAndSearchQuestionPlugin.askAndSearchQuestionPlugin</id>
+  <name>HuaweiForumPluginForIntelliJ</name>
+  <vendor email="huaweideveloper1@gmail.com" url="https://forums.developer.huawei.com/forumPortal/en/home?fid=0101187876626530001">Huawei</vendor>
+  <description><![CDATA[Plugin to help search Huawei from inside IntelliJ]]></description>
+  <change-notes>Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+  <actions>
+    <!-- Add Ask question action to Tools Menu -->
+    <action id="Huawei.AskQuestion.ToolsMenu" class="com.huawei.askAndSearchQuestionPlugin.AskQuestionAction" text="Ask Question on Huawei" icon="/icons/ic_launcher.png" description="Ask a Question on Huawei">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+    <!-- Add action to search Huawei from file editor -->
+    <action id="Huawei.Search.Editor" class="com.huawei.askAndSearchQuestionPlugin.SearchQuestionActionWithGradle" text="Search on Huawei" icon="/icons/ic_launcher.png" description="Search on Huawei">
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+    <!-- Add action to search Huawei from console editor -->
+    <action id="Huawei.Search.Console" class="com.huawei.askAndSearchQuestionPlugin.SearchQuestionAction" text="Search on Huawei" icon="/icons/ic_launcher.png" description="Search on Huawei">
+      <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
