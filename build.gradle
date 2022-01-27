@@ -17,14 +17,15 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '2020.2'
+    version = 'IC-2021.3'
 }
-
 patchPluginXml {
+    sinceBuild = "146.939"
     changeNotes = """
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
 }
+
 test {
     useJUnitPlatform()
 }
